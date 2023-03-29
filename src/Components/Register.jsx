@@ -1,11 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/userContext'
 import FormInput from './FormInput'
 
 export default function Register() {
   const userCtx = useContext(UserContext)
 
-  const { registerUser, formData } = userCtx
+  const { authStatus, registerUser, formData } = userCtx
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (authStatus) navigate('/')
+  }, [authStatus])
 
   const sendData = (event) => {
     event.preventDefault()
