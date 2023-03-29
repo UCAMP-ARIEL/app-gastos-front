@@ -12,11 +12,6 @@ export const UserProvider = ({ children }) => {
     password: '',
   })
 
-  const [loginData, setLoginData] = useState({
-    email: '',
-    password: '',
-  })
-
   const handleChange = (event) => {
     event.preventDefault()
     setFormData({

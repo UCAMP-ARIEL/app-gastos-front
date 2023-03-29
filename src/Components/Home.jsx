@@ -51,7 +51,7 @@ export default function Home() {
           </Link>
           {success && (
             <div className='alert alert-success mt-4' role='alert'>
-              Sus datos se guardaron exito{' '}
+              Sus datos se guardaron exito
             </div>
           )}
           {error && (
